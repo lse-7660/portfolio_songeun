@@ -1,10 +1,11 @@
 import Header from './common/header';
+import Intro from './components/Intro';
 
 function App() {
     return (
         <>
             <Header />
-            <p>포폴</p>
+            <Intro />
         </>
     );
 }

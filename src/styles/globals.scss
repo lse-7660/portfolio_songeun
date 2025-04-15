@@ -1,4 +1,8 @@
 :root {
+    --background: #f6f6f6;
+    --foreground: #121814;
+
+    // grayscale
     --g0: #ffffff;
     --g10: #fafafa;
     --g20: #f6f6f6;
@@ -20,8 +24,18 @@
     --g900: #121814;
 }
 
+body {
+    color: var(--g900);
+}
+
 .inner {
     width: 100vw;
     max-width: 1600px;
     padding: 0 160px;
+}
+
+.inner-common {
+    width: 100vw;
+    max-width: 1600px;
+    padding: 120px 160px;
 }
