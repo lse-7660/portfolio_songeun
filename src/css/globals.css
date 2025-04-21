@@ -2,38 +2,46 @@
   --background: #f6f6f6;
   --foreground: #121814;
   --g0: #ffffff;
-  --g10: #fafafa;
+  --g10: #fafafb;
   --g20: #f6f6f6;
-  --g30: #ecedec;
-  --g40: #e0e1e0;
+  --g30: #eceded;
+  --g40: #e1e1e2;
   --g50: #c4c5c4;
-  --g60: #b6b7b6;
-  --g70: #aaacaa;
-  --g80: #9b9e9c;
-  --g90: #8d908e;
-  --g100: #7f8280;
-  --g200: #717472;
-  --g300: #636764;
-  --g400: #575b58;
-  --g500: #494d4a;
-  --g600: #3d423e;
-  --g700: #2c312e;
-  --g800: #1e2420;
-  --g900: #121814;
+  --g60: #c5c6c7;
+  --g70: #abadae;
+  --g80: #9e9fa1;
+  --g90: #909293;
+  --g100: #828486;
+  --g200: #747678;
+  --g300: #66696b;
+  --g400: #5a5d5f;
+  --g500: #4c4f52;
+  --g600: #414447;
+  --g700: #313437;
+  --g800: #232629;
+  --g900: #171b1e;
 }
 
 body {
   color: var(--g900);
 }
 
-.inner {
-  width: 100vw;
-  max-width: 1600px;
+.inner-header {
+  width: 100%;
   padding: 0 160px;
 }
 
 .inner-common {
   width: 100vw;
-  max-width: 1600px;
   padding: 120px 160px;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper {
+  overflow: visible;
 }/*# sourceMappingURL=globals.css.map */

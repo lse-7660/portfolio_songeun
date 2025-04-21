@@ -24,6 +24,14 @@ export default {
                 g800: 'var(--g800)',
                 g900: 'var(--g900)',
             },
+            fontSize: {
+                'display-xxl': '240px',
+                'display-s': '64px',
+
+                'heading-s': '24px',
+
+                'body-m': '16px',
+            },
         },
     },
     plugins: [],
