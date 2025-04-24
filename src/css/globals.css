@@ -24,9 +24,13 @@
 
 body {
   color: var(--g900);
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .inner-header {
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 0 160px;
 }
@@ -34,6 +38,11 @@ body {
 .inner-common {
   width: 100vw;
   padding: 120px 160px;
+}
+
+.inner-gallery {
+  width: 100vw;
+  padding: 0 80px;
 }
 
 .centering {
@@ -44,4 +53,8 @@ body {
 
 .swiper {
   overflow: visible;
+}
+
+a {
+  color: var(--g900);
 }/*# sourceMappingURL=globals.css.map */

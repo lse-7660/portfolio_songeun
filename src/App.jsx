@@ -1,20 +1,21 @@
-import Header from './common/header';
-import Design from './components/Design';
-import Intro from './components/Intro';
-import Skills from './components/Skills';
-import WhoIAm from './components/WhoIAm';
-import Works from './components/Works';
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+} from 'react-router-dom';
+import { DesignGallery, Main } from './pages';
 
 function App() {
     return (
-        <>
-            <Header />
-            <Intro />
-            <WhoIAm />
-            <Skills />
-            <Works />
-            <Design />
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Main />} />
+                <Route
+                    path="/design"
+                    element={<DesignGallery />}
+                />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
