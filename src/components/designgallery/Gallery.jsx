@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { galleryActions } from '../../store/modules/gallerySlice';
 import {
-    motion,
-    useTransform,
-    useScroll,
-} from 'framer-motion';
+    CaretLeft,
+    CaretRight,
+    X,
+} from '@phosphor-icons/react';
 
 const navList = [
     { title: 'Promotion', category: 'event' },
@@ -16,9 +16,8 @@ const navList = [
 
 const Gallery = () => {
     const dispatch = useDispatch();
-    const { filteredData, selectedCategory } = useSelector(
-        (state) => state.gallery
-    );
+    const { filteredData, selectedCategory, curImg } =
+        useSelector((state) => state.gallery);
     const [isShowModal, setIsShowModal] = useState(false);
 
     /*카테고리 선택 시 스크롤 y 위치*/
@@ -59,6 +58,17 @@ const Gallery = () => {
             );
     }, []);
 
+    /*모달*/
+    const openModal = (x) => {
+        setIsShowModal(true);
+        dispatch(galleryActions.setCurImg(x));
+    };
+
+    const closeModal = () => {
+        setIsShowModal(false);
+        dispatch(galleryActions.clearCurImg());
+    };
+
     return (
         <div className="design-gallery bg-g20 ">
             <div className="gallery-tab fixed top-5 left-1/2 -translate-x-1/2 z-20 flex justify-center px-8 bg-[#c4c5c480] backdrop-blur-xl rounded-lg">
@@ -84,7 +94,6 @@ const Gallery = () => {
                     ))}
                 </ul>
             </div>
-
             <div className="gallery-intro px-[60px] py-[60px] fixed top-0 z-0 h-screen flex flex-col justify-end gap-5 bg-g20">
                 <img
                     src="/Design_Gallery.svg"
@@ -116,15 +125,80 @@ const Gallery = () => {
                             alt={item.name}
                             className="h-full object-cover hover:scale-[1.1] transition-all duration-500 ease-in-out cursor-pointer"
                             onClick={() =>
-                                dispatch(
-                                    galleryActions.setCurImg(
-                                        index
-                                    )
-                                )
+                                openModal(item.id)
                             }
                         />
                     </div>
                 ))}
+            </div>
+            <div
+                className={`gallery-modal-wrap fixed z-40 ${
+                    isShowModal ? 'visible' : 'hidden'
+                }`}
+            >
+                <div className="gallery-modal fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 h-[90vh] w-[90vw] py-[48px] px-20 z-40 centering rounded-xl bg-g0 ">
+                    <div
+                        onClick={closeModal}
+                        className="close-btn absolute right-5 top-5"
+                    >
+                        <X size={24} />
+                    </div>
+                    <div
+                        className="prev-img cursor-pointer absolute left-5 w-[40px] h-[40px] centering "
+                        onClick={() =>
+                            dispatch(
+                                galleryActions.setPrevImg()
+                            )
+                        }
+                    >
+                        <CaretLeft
+                            size={42}
+                            color={
+                                curImg > 1
+                                    ? 'var(--g900)'
+                                    : 'var(--g50)'
+                            }
+                        />
+                    </div>
+
+                    <img
+                        src={
+                            curImg > 0 &&
+                            filteredData.find(
+                                (item) => item.id === curImg
+                            ).imgUrl
+                        }
+                        alt={
+                            curImg > 0 &&
+                            filteredData.find(
+                                (item) => item.id === curImg
+                            ).name
+                        }
+                        className="h-full w-full object-contain"
+                    />
+
+                    <div
+                        className="next-img cursor-pointer absolute right-5 w-[40px] h-[40px] centering"
+                        onClick={() =>
+                            dispatch(
+                                galleryActions.setNextImg()
+                            )
+                        }
+                    >
+                        <CaretRight
+                            size={42}
+                            color={
+                                curImg < filteredData.length
+                                    ? 'var(--g900)'
+                                    : 'var(--g50)'
+                            }
+                        />
+                    </div>
+                </div>
+                <div
+                    onClick={closeModal}
+                    className="dimmed fixed inset-0 bg-[#171b1e90]"
+                ></div>
             </div>
         </div>
     );

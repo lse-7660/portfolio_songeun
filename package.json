@@ -10,12 +10,13 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "react-redux": "^9.2.0",
+        "@phosphor-icons/react": "^2.1.7",
         "@reduxjs/toolkit": "^2.6.0",
+        "framer-motion": "^12.4.10",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "react-redux": "^9.2.0",
         "react-router-dom": "6",
-        "framer-motion": "^12.4.10",
         "swiper": "^11.2.6"
     },
     "devDependencies": {
