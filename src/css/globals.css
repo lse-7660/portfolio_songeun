@@ -40,11 +40,6 @@ body {
   padding: 120px 160px;
 }
 
-.inner-gallery {
-  width: 100vw;
-  padding: 0 60px;
-}
-
 .centering {
   display: flex;
   justify-content: center;

@@ -186,6 +186,7 @@ const initialState = {
     filteredData: galleryData.filter(
         (item) => item.category === 'event'
     ),
+    curImg: null,
 };
 export const gallerySlice = createSlice({
     name: 'gallery',
@@ -197,6 +198,27 @@ export const gallerySlice = createSlice({
                 (data) =>
                     data.category === state.selectedCategory
             );
+        },
+        setCurImg: (state, action) => {
+            state.curImg = action.payload;
+        },
+        setPrevImg: (state, action) => {
+            if (state.curImg > 0) {
+                state.curImg = state.curImg--;
+            } else {
+                return;
+            }
+        },
+        setNextImg: (state, action) => {
+            if (
+                state.curImg <
+                state.filteredData.length - 1
+            ) {
+                state.curImg = state.curImg++;
+            } else return;
+        },
+        clearCurImg: (state, action) => {
+            state.curImg = null;
         },
     },
 });
