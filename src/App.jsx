@@ -4,6 +4,7 @@ import {
     Routes,
 } from 'react-router-dom';
 import { DesignGallery, Main } from './pages';
+import WorksPage from './pages/works';
 
 function App() {
     return (
@@ -13,6 +14,10 @@ function App() {
                 <Route
                     path="/design"
                     element={<DesignGallery />}
+                />
+                <Route
+                    path="/works/:name"
+                    element={<WorksPage />}
                 />
             </Routes>
         </BrowserRouter>

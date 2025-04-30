@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import worksData from '../../assets/api/worksData';
+import { Link } from 'react-router-dom';
 
 const Works = () => {
     return (
@@ -17,11 +18,15 @@ const Works = () => {
                 {worksData.map((item) => (
                     <SwiperSlide key={item.index}>
                         <div className="aspect-[3/4]">
-                            <img
-                                src={item.imgUrl}
-                                alt={item.name}
-                                className="h-full w-full object-cover"
-                            />
+                            <Link
+                                to={`/works/${item.name}`}
+                            >
+                                <img
+                                    src={item.imgUrl}
+                                    alt={item.name}
+                                    className="h-full w-full object-cover"
+                                />
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}

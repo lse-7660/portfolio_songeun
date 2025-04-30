@@ -29,6 +29,7 @@ export default {
                 'display-s': '64px',
 
                 'heading-s': '24px',
+                'heading-xs': '20px',
 
                 'body-m': '16px',
             },
