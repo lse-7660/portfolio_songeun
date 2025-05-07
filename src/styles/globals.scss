@@ -28,6 +28,12 @@ body {
     color: var(--g900);
     overflow-x: hidden;
     box-sizing: border-box;
+
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 .inner-header {

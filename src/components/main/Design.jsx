@@ -23,9 +23,14 @@ const Design = () => {
                 </p>
             </div>
             <div
-                className="w-full aspect-[16/9] bg-g100"
+                className="w-full"
                 onClick={() => navigate('/design')}
-            ></div>
+            >
+                <img
+                    src="/designimage/designgallery.png"
+                    alt="디자인 갤러리 바로가기"
+                />
+            </div>
         </div>
     );
 };

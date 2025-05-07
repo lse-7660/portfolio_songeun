@@ -67,19 +67,42 @@ const WorksDetail = () => {
     };
 
     /* 가로스크롤 */
+    const [viewportWidth, setViewportWidth] = useState(
+        window.innerWidth
+    );
+
     const containerRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ['start start', 'end end'],
     });
     const partWidth =
-        currentWork.part.length * 1080 +
-        (currentWork.part.length - 1) * 24;
+        currentWork.part.length * (viewportWidth * 0.7) +
+        (currentWork.part.length - 1) * 24 -
+        viewportWidth +
+        120;
     const x = useTransform(
         scrollYProgress,
-        [0, 1],
+        [0.1, 1],
         ['0px', `-${partWidth}px`]
     );
+
+    useEffect(() => {
+        const handleResize = () => {
+            setViewportWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        handleResize();
+
+        return () => {
+            window.removeEventListener(
+                'resize',
+                handleResize
+            );
+        };
+    }, []);
 
     return (
         <div className="text-g0">
@@ -192,7 +215,7 @@ const WorksDetail = () => {
                         </div>
                     </div>
                 </AnimatedUpward>
-                <AnimatedUpward className="works-part">
+                <div className="works-part">
                     <p className="mb-5 text-heading-s font-bold">
                         Part
                     </p>
@@ -203,13 +226,13 @@ const WorksDetail = () => {
                     >
                         <motion.div
                             style={{ x }}
-                            className="flex flex-row gap-6 sticky top-6"
+                            className="flex flex-row gap-6 sticky top-[60px]"
                         >
                             {currentWork.part.map(
                                 (content, index) => (
                                     <div
                                         key={index}
-                                        className="flex flex-col gap-6 flex-shrink-0 text-g0 w-[1080px]"
+                                        className="flex flex-col gap-6 flex-shrink-0 text-g0 w-[70vw]"
                                     >
                                         <img
                                             src={
@@ -218,7 +241,7 @@ const WorksDetail = () => {
                                             alt={
                                                 content.title
                                             }
-                                            className="h-[720px] w-full object-cover"
+                                            className="h-[70vh] w-full object-cover"
                                         />
                                         <p className="text-heading-xs font-bold">
                                             {content.title}
@@ -231,7 +254,7 @@ const WorksDetail = () => {
                             )}
                         </motion.div>
                     </div>
-                </AnimatedUpward>
+                </div>
             </div>
         </div>
     );

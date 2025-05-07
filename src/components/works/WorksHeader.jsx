@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const WorksHeader = () => {
     return (
-        <div className="fixed top-0 z-40 flex flex-row justify-between w-screen px-[60px] py-4">
+        <div className="fixed top-0 z-40 flex flex-row justify-between w-screen px-[60px] py-4 backdrop-blur-xl">
             <Link to={'/'} className="text-g0">
                 HOME
             </Link>
