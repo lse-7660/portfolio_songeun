@@ -17,14 +17,14 @@ const Works = () => {
             >
                 {worksData.map((item) => (
                     <SwiperSlide key={item.index}>
-                        <div className="aspect-[3/4]">
+                        <div className="aspect-[3/4] overflow-hidden">
                             <Link
                                 to={`/works/${item.name}`}
                             >
                                 <img
                                     src={item.imgUrl}
                                     alt={item.name}
-                                    className="h-full w-full object-cover"
+                                    className="h-full w-full object-cover transition-all duration-300 hover:scale-110"
                                 />
                             </Link>
                         </div>
