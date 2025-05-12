@@ -1,95 +1,90 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Intro = () => {
-    const startLetter = 'DESIGNER';
-    const endLetter = 'DEVELOPER';
+    const sequences = [
+        ['D', 'A', 'F', 'R', 'T', 'D'],
+        ['E', 'I', 'Z', 'V', 'A', 'E'],
+        ['S', 'R', 'A', 'B', 'J', 'V'],
+        ['I', 'A', 'F', 'R', 'T', 'E'],
+        ['G', 'I', 'Z', 'V', 'A', 'L'],
+        ['N', 'R', 'A', 'B', 'D', 'O'],
+        ['E', 'Y', 'N', 'X', 'E', 'P'],
+        ['R', 'L', 'C', 'F', 'A', 'E'],
+    ];
 
-    const steps = 5; // 중간 단계 수
-    const [sequences, setSequences] = useState([]);
-
-    const generateLetterSequences = (
-        start,
-        end,
-        steps = 5
-    ) => {
-        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const sequences = [];
-
-        for (let i = 0; i < start.length; i++) {
-            const sequence = [start[i]];
-            for (let j = 0; j < steps; j++) {
-                const randomChar =
-                    alphabet[
-                        Math.floor(
-                            Math.random() * alphabet.length
-                        )
-                    ];
-                sequence.push(randomChar);
-            }
-            sequence.push(end[i]);
-            sequences.push(sequence);
-        }
-
-        return sequences;
-    };
-    console.log(sequences);
-
-    useEffect(() => {
-        const generated = generateLetterSequences(
-            startLetter,
-            endLetter,
-            steps
-        );
-        setSequences(generated);
-    }, []);
-
-    const lineHeight = 240; // 글자 하나 높이(px)
+    const lineHeight = 200; // 글자 하나 높이(px)
     const durationPerStep = 0.2;
+    const animationEndTime = Math.max(
+        ...sequences.map(
+            (column, i) =>
+                1 +
+                i * durationPerStep +
+                column.length * durationPerStep +
+                0.2
+        )
+    );
+
+    const animationFontStyle =
+        'text-[200px] leading-none font-bold text-center font-mono';
 
     return (
         <div className="intro bg-g20">
             <div className="inner-intro flex flex-col justify-between h-screen">
                 <div className="intro-title">
-                    <div className="centering h-[240px] overflow-hidden mb-5">
+                    <div className="h-[200px] flex flex-row justify-center overflow-hidden mb-5">
                         {sequences.map((column, i) => (
                             <motion.div
                                 key={i}
-                                initial={{
-                                    y: `${
-                                        lineHeight *
-                                        (column.lenght - 1)
-                                    }`,
-                                }}
+                                initial={{ y: 0 }}
                                 animate={{
-                                    y: 0,
+                                    y:
+                                        -lineHeight *
+                                        (column.length - 1),
                                 }}
                                 transition={{
                                     duration:
                                         durationPerStep *
                                         column.length,
-                                    delay: i * 0.2,
+                                    delay:
+                                        1 +
+                                        i * durationPerStep,
                                     ease: 'easeInOut',
                                 }}
                                 className="flex flex-col"
                             >
                                 {column.map((char, j) => (
-                                    <div
+                                    <span
                                         key={j}
                                         style={{
-                                            height: `${
-                                                lineHeight *
-                                                (column.lenght -
-                                                    1)
-                                            }px`,
+                                            height: `${lineHeight}px`,
                                         }}
-                                        className="text-[240px] leading-none font-bold text-center"
+                                        className={
+                                            animationFontStyle
+                                        }
                                     >
                                         {char}
-                                    </div>
+                                    </span>
                                 ))}
                             </motion.div>
                         ))}
+                        <motion.span
+                            initial={{
+                                y: lineHeight,
+                                width: 0,
+                            }}
+                            animate={{
+                                y: 0,
+                                width: 'auto',
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                delay: animationEndTime,
+                                ease: 'easeInOut',
+                            }}
+                            className={animationFontStyle}
+                        >
+                            R
+                        </motion.span>
                     </div>
 
                     <p className="text-center">
