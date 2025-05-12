@@ -24,6 +24,9 @@ export default {
                 g800: 'var(--g800)',
                 g900: 'var(--g900)',
             },
+            fontFamily: {
+                dmserif: ['"DM Serif Display"', 'serif'],
+            },
             fontSize: {
                 'display-xxl': '240px',
                 'display-s': '64px',

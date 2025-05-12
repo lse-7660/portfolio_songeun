@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 const Works = () => {
     return (
         <div className="works inner-common bg-g900">
-            <h3 className="text-heading-s font-bold text-g0">
-                Works
+            <h3 className="text-heading-s font-bold mb-4 text-g0">
+                Projects
             </h3>
             <Swiper
-                slidesPerView={2.2}
+                slidesPerView={3.2}
                 spaceBetween={24}
                 className="mySwiper"
             >

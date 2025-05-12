@@ -3,11 +3,11 @@ import skillsData from '../../assets/api/skillsData';
 
 const Skills = () => {
     return (
-        <div className="skills inner-common bg-g900">
-            <h3 className="text-heading-s font-bold text-g0">
+        <div className="skills inner-common flex flex-row gap-[100px] items-start bg-g900">
+            <h3 className="text-heading-s font-bold text-g0 shrink-0">
                 Skills & Tools
             </h3>
-            <div className="skills-wrap flex flex-col gap-10 pl-[390px] -mt-6">
+            <div className="skills-wrap flex flex-col gap-10">
                 <div className="skills-language flex flex-row gap-4 ">
                     {skillsData
                         .filter(
@@ -17,7 +17,7 @@ const Skills = () => {
                         .map((item) => (
                             <div
                                 key={item.index}
-                                className="w-20 h-20 bg-g800 centering"
+                                className="w-20 h-20 bg-g800 centering shrink-0"
                             >
                                 <img
                                     src={item.imgUrl}
@@ -26,8 +26,8 @@ const Skills = () => {
                             </div>
                         ))}
                 </div>
-                <div className=" skills-bottom-wrap flex flex-row gap-[60px]">
-                    <div className=" skills-design flex flex-row gap-4">
+                <div className="skills-bottom-wrap flex flex-row gap-[60px]">
+                    <div className="skills-design flex flex-row gap-4">
                         {skillsData
                             .filter(
                                 (item) =>
@@ -36,7 +36,7 @@ const Skills = () => {
                             .map((item) => (
                                 <div
                                     key={item.index}
-                                    className="w-20 h-20 bg-g800 centering"
+                                    className="w-20 h-20 bg-g800 centering shrink-0"
                                 >
                                     <img
                                         src={item.imgUrl}
@@ -45,7 +45,7 @@ const Skills = () => {
                                 </div>
                             ))}
                     </div>
-                    <div className="skills-colab flex flex-row gap-4">
+                    <div className="skills-colab flex flex-row flex-wrap gap-4">
                         {skillsData
                             .filter(
                                 (item) =>
@@ -54,7 +54,7 @@ const Skills = () => {
                             .map((item) => (
                                 <div
                                     key={item.index}
-                                    className="w-20 h-20 bg-g800 centering"
+                                    className="w-20 h-20 bg-g800 centering shrink-0"
                                 >
                                     <img
                                         src={item.imgUrl}

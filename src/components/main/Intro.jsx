@@ -2,10 +2,10 @@ import React from 'react';
 
 const Intro = () => {
     return (
-        <div className="intro flex flex-col justify-between h-screen bg-g20">
-            <div className="inner-common">
+        <div className="intro bg-g20">
+            <div className="inner-intro flex flex-col justify-between h-screen">
                 <div className="intro-title">
-                    <p className="text-center text-[240px]">
+                    <p className="text-center text-[240px] margin-5 font-bold">
                         DESIGNER
                     </p>
                     <p className="text-center">

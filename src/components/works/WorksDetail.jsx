@@ -183,7 +183,7 @@ const WorksDetail = () => {
                 <img
                     src={currentWork.conceptImg}
                     alt={currentWork.name}
-                    className="h-full object-cover"
+                    className="h-full w-full object-cover"
                 />
             </div>
             <div className="works-sec-desc px-[60px] py-[120px] flex flex-col gap-[60px] w-screen bg-g900 mt-[100vh]">

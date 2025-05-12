@@ -2,15 +2,19 @@ import React from 'react';
 
 const WhoIAm = () => {
     return (
-        <div className="inner-common bg-g900">
-            <h3 className="text-g0">Who I Am</h3>
-            <p className="text-display-s font-bold text-g0">
-                From design to development, I create
-                intuitive and efficient user experiences
-                through clean and maintainable front-end
-                code.
-            </p>
-            <p className="text-body-m px-[390px] text-g0">
+        <div className="inner-common flex flex-col gap-10 bg-g900">
+            <div>
+                <h3 className="text-g0 mb-6 centering">
+                    Who I Am
+                </h3>
+                <p className="text-display-s/[120%] font-bold text-g0 ">
+                    From design to development, I create
+                    intuitive and efficient user experiences
+                    through clean and maintainable front-end
+                    code.
+                </p>
+            </div>
+            <p className="text-body-m w-[860px] mx-auto text-g0">
                 사용자 경험과 개발 효율 두 방향 모두에 대해
                 심도 있게 고민하며, 단순히 시각적 아름다움에
                 그치지 않고 기능적 완성도를 높여 사용자에게
