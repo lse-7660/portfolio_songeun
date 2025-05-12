@@ -15,7 +15,7 @@ const Intro = () => {
                         설계합니다.
                     </p>
                 </div>
-                <div className="intro-info flex flex-col items-center">
+                <div className="intro-info flex flex-col items-center gap-[10px]">
                     <p>Lee Song Eun</p>
                     <div className="intro-info-wrap flex flex-row gap-6">
                         <div className="intro-info-tel flex flex-row gap-2">
