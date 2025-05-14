@@ -1,11 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const Design = () => {
+const Design = ({ sectionRefs }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="design-gallery inner-common bg-g900 flex flex-col gap-[60px]">
+        <div
+            ref={(el) =>
+                (sectionRefs.current['design-gallery'] = el)
+            }
+            className="design-gallery inner-common bg-g900 flex flex-col gap-[60px]"
+        >
             <div className="flex flex-col gap-5">
                 <h3 className="text-heading-s font-bold text-g0 text-center">
                     Design Gallery

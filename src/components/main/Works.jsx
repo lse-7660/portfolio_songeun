@@ -4,9 +4,14 @@ import 'swiper/css';
 import worksData from '../../assets/api/worksData';
 import { Link } from 'react-router-dom';
 
-const Works = () => {
+const Works = ({ sectionRefs }) => {
     return (
-        <div className="works inner-common bg-g900">
+        <div
+            ref={(el) =>
+                (sectionRefs.current['projects'] = el)
+            }
+            className="projects inner-common bg-g900"
+        >
             <h3 className="text-heading-s font-bold mb-4 text-g0">
                 Projects
             </h3>

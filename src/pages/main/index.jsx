@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
     Design,
     Intro,
@@ -9,14 +9,22 @@ import {
 import Header from '../../common/header';
 
 const Main = () => {
+    const sectionRefs = useRef({});
+
+    const scrollToSection = (key) => {
+        sectionRefs.current[key]?.scrollIntoView({
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <div>
-            <Header />
-            <Intro />
-            <WhoIAm />
-            <Skills />
-            <Works />
-            <Design />
+            <Header scrollToSection={scrollToSection} />
+            <Intro sectionRefs={sectionRefs} />
+            <WhoIAm sectionRefs={sectionRefs} />
+            <Skills sectionRefs={sectionRefs} />
+            <Works sectionRefs={sectionRefs} />
+            <Design sectionRefs={sectionRefs} />
         </div>
     );
 };

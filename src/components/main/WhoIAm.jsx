@@ -1,8 +1,13 @@
 import React from 'react';
 
-const WhoIAm = () => {
+const WhoIAm = ({ sectionRefs }) => {
     return (
-        <div className="inner-common flex flex-col gap-10 bg-g900">
+        <div
+            ref={(el) =>
+                (sectionRefs.current['who-i-am'] = el)
+            }
+            className="who-i-am inner-common flex flex-col gap-10 bg-g900"
+        >
             <div>
                 <h3 className="text-g0 mb-6 centering">
                     Who I Am

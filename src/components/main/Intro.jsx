@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const Intro = () => {
+const Intro = ({ sectionRefs }) => {
     const sequences = [
         ['D', 'A', 'F', 'R', 'T', 'R', 'D'],
         ['E', 'I', 'Z', 'V', 'A', 'W', 'E'],
@@ -28,7 +28,12 @@ const Intro = () => {
         'text-[200px] leading-none font-bold text-center font-mono';
 
     return (
-        <div className="intro bg-g20">
+        <div
+            ref={(el) =>
+                (sectionRefs.current['intro'] = el)
+            }
+            className="intro bg-g20"
+        >
             <div className="inner-intro flex flex-col justify-between h-screen">
                 <div className="intro-title">
                     <div className="h-[200px] flex flex-row justify-center overflow-hidden mb-5">

@@ -1,9 +1,14 @@
 import React from 'react';
 import skillsData from '../../assets/api/skillsData';
 
-const Skills = () => {
+const Skills = ({ sectionRefs }) => {
     return (
-        <div className="skills inner-common flex flex-row gap-[100px] items-start bg-g900">
+        <div
+            ref={(el) =>
+                (sectionRefs.current['skills'] = el)
+            }
+            className="skills inner-common flex flex-row gap-[100px] items-start bg-g900"
+        >
             <h3 className="text-heading-s font-bold text-g0 shrink-0">
                 Skills & Tools
             </h3>
