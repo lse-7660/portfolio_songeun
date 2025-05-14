@@ -49,7 +49,7 @@ const Works = ({ sectionRefs }) => {
                             }}
                             className="px-3 py-1 text-heading-xs bg-g900"
                         >
-                            Check the Details
+                            View Details
                         </motion.div>
                     </motion.div>
                 )}
