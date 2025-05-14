@@ -35,7 +35,7 @@ const Intro = ({ sectionRefs }) => {
             className="intro bg-g20"
         >
             <div className="inner-intro flex flex-col justify-between h-screen">
-                <div className="intro-title">
+                <div className="intro-title pt-[120px]">
                     <div className="h-[200px] flex flex-row justify-center overflow-hidden mb-5">
                         {sequences.map((column, i) => (
                             <motion.div

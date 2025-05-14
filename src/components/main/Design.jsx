@@ -28,7 +28,7 @@ const Design = ({ sectionRefs }) => {
                 </p>
             </div>
             <div
-                className="w-full"
+                className="w-full cursor-pointer"
                 onClick={() => navigate('/design')}
             >
                 <img
