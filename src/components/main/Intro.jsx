@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 
 const Intro = () => {
     const sequences = [
-        ['D', 'A', 'F', 'R', 'T', 'D'],
-        ['E', 'I', 'Z', 'V', 'A', 'E'],
-        ['S', 'R', 'A', 'B', 'J', 'V'],
-        ['I', 'A', 'F', 'R', 'T', 'E'],
-        ['G', 'I', 'Z', 'V', 'A', 'L'],
-        ['N', 'R', 'A', 'B', 'D', 'O'],
-        ['E', 'Y', 'N', 'X', 'E', 'P'],
-        ['R', 'L', 'C', 'F', 'A', 'E'],
+        ['D', 'A', 'F', 'R', 'T', 'R', 'D'],
+        ['E', 'I', 'Z', 'V', 'A', 'W', 'E'],
+        ['S', 'R', 'A', 'B', 'J', 'A', 'V'],
+        ['I', 'A', 'F', 'R', 'T', 'D', 'E'],
+        ['G', 'I', 'Z', 'V', 'A', 'J', 'L'],
+        ['N', 'R', 'A', 'B', 'D', 'L', 'O'],
+        ['E', 'Y', 'N', 'X', 'E', 'U', 'P'],
+        ['R', 'L', 'C', 'F', 'A', 'X', 'E'],
     ];
 
     const lineHeight = 200; // 글자 하나 높이(px)
@@ -20,7 +20,7 @@ const Intro = () => {
                 1 +
                 i * durationPerStep +
                 column.length * durationPerStep +
-                0.2
+                0.4
         )
     );
 
@@ -77,7 +77,7 @@ const Intro = () => {
                                 width: 'auto',
                             }}
                             transition={{
-                                duration: 0.5,
+                                duration: 0.8,
                                 delay: animationEndTime,
                                 ease: 'easeInOut',
                             }}
@@ -87,12 +87,21 @@ const Intro = () => {
                         </motion.span>
                     </div>
 
-                    <p className="text-center">
+                    <motion.p
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{
+                            duration: 1,
+                            delay: animationEndTime + 0.5,
+                            ease: 'easeInOut',
+                        }}
+                        className="text-center"
+                    >
                         디자인 경력과 개발 효율을 갖춘
                         프론트엔드 개발자, 이송은입니다.
                         <br /> 디테일을 고민하고, 경험을
                         설계합니다.
-                    </p>
+                    </motion.p>
                 </div>
                 <div className="intro-info flex flex-col items-center gap-[10px]">
                     <p>Lee Song Eun</p>
