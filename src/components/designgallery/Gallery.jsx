@@ -123,7 +123,7 @@ const Gallery = () => {
                         <img
                             src={item.imgUrl}
                             alt={item.name}
-                            className="h-full object-cover hover:scale-[1.1] transition-all duration-500 ease-in-out cursor-pointer"
+                            className="h-full w-full object-cover hover:scale-[1.1] transition-all duration-500 ease-in-out cursor-pointer"
                             onClick={() =>
                                 openModal(item.id)
                             }

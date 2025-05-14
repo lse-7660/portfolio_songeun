@@ -112,7 +112,7 @@ const WorksDetail = () => {
                 }`}
             >
                 <h3
-                    className={`text-display-s delay-1000 ${introTransition} ${
+                    className={`text-display-s delay-1000 font-dmserif ${introTransition} ${
                         loaded ? introAniEnd : introAniStart
                     }`}
                 >
