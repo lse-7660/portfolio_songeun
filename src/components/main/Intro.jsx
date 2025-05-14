@@ -36,7 +36,16 @@ const Intro = ({ sectionRefs }) => {
         >
             <div className="inner-intro flex flex-col justify-between h-screen">
                 <div className="intro-title pt-[120px]">
-                    <div className="h-[200px] flex flex-row justify-center overflow-hidden mb-5">
+                    <motion.div
+                        initial={{ y: 40 }}
+                        animate={{ y: 0 }}
+                        transition={{
+                            duration: 1,
+                            delay: animationEndTime + 0.8,
+                            ease: 'easeInOut',
+                        }}
+                        className="h-[200px] flex flex-row justify-center overflow-hidden mb-5"
+                    >
                         {sequences.map((column, i) => (
                             <motion.div
                                 key={i}
@@ -90,14 +99,14 @@ const Intro = ({ sectionRefs }) => {
                         >
                             R
                         </motion.span>
-                    </div>
+                    </motion.div>
 
                     <motion.p
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{
                             duration: 1,
-                            delay: animationEndTime + 0.5,
+                            delay: animationEndTime + 0.8,
                             ease: 'easeInOut',
                         }}
                         className="text-center"
@@ -108,7 +117,16 @@ const Intro = ({ sectionRefs }) => {
                         설계합니다.
                     </motion.p>
                 </div>
-                <div className="intro-info flex flex-col items-center gap-[10px]">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{
+                        duration: 1,
+                        delay: animationEndTime + 1,
+                        ease: 'easeInOut',
+                    }}
+                    className="intro-info flex flex-col items-center gap-[10px]"
+                >
                     <p>Lee Song Eun</p>
                     <div className="intro-info-wrap flex flex-row gap-6">
                         <div className="intro-info-tel flex flex-row gap-2">
@@ -120,7 +138,7 @@ const Intro = ({ sectionRefs }) => {
                             <p>thddms355@naver.com</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );
