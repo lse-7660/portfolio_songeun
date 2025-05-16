@@ -59,7 +59,6 @@ const WhoIAm = ({ sectionRefs }) => {
                 </p>
             </div>
             <div className="relative w-[860px] h-[600px] overflow-hidden">
-                {/* 움직이는 원들 */}
                 <WaveCircle
                     yRange={{ min: 300, max: 500 }}
                 />
@@ -95,7 +94,6 @@ const WhoIAm = ({ sectionRefs }) => {
                 />
 
                 <div className="absolute bottom-0 w-full h-1/4 bg-g0" />
-                {/* 블러 오버레이 */}
                 <div className="absolute inset-0 backdrop-blur-3xl z-10" />
             </div>
             <p className="text-body-m w-[860px] mx-auto text-g0">
