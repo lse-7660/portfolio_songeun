@@ -87,7 +87,7 @@ const WhoIAm = ({ sectionRefs }) => {
                 </p>
             </div>
             <div className="relative w-[860px] h-[600px] overflow-hidden">
-                <div className="absolute z-20 w-full h-full mix-blend-difference px-4 py-4 flex flex-col justify-between ">
+                <div className="absolute z-20 w-full h-full mix-blend-difference px-4 py-4 flex flex-col justify-between items-start">
                     {whoIAmImg.map((item) => (
                         <img
                             key={item.index}
