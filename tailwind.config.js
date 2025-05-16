@@ -29,7 +29,9 @@ export default {
             },
             fontSize: {
                 'display-xxl': '240px',
+                'display-m': '78px',
                 'display-s': '64px',
+                'display-xs': '52px',
 
                 'heading-s': '24px',
                 'heading-xs': '20px',

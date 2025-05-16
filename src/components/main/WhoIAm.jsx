@@ -1,6 +1,34 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+const whoIAmImg = [
+    {
+        name: 'clean',
+        url: '/WhoIAm/CLEAN.svg',
+        className: 'top-[20px]',
+    },
+    {
+        name: 'intuitive',
+        url: '/WhoIAm/INTUITIVE.svg',
+        className: 'top-[140px]',
+    },
+    {
+        name: 'efficient',
+        url: '/WhoIAm/EFFICIENT.svg',
+        className: 'top-[260px]',
+    },
+    {
+        name: 'maintain',
+        url: '/WhoIAm/MAINTAIN.svg',
+        className: 'top-[380px]',
+    },
+    {
+        name: 'front-end',
+        url: '/WhoIAm/FRONT-END.svg',
+        className: 'top-[500px]',
+    },
+];
+
 const WhoIAm = ({ sectionRefs }) => {
     const getRandomPosition = (yRange, maxX = 860) => {
         return {
@@ -59,6 +87,15 @@ const WhoIAm = ({ sectionRefs }) => {
                 </p>
             </div>
             <div className="relative w-[860px] h-[600px] overflow-hidden">
+                <div className="absolute z-20 w-full h-full mix-blend-difference px-4 py-4 flex flex-col justify-between ">
+                    {whoIAmImg.map((item) => (
+                        <img
+                            key={item.index}
+                            src={item.url}
+                            className="flex-none"
+                        ></img>
+                    ))}
+                </div>
                 <WaveCircle
                     yRange={{ min: 300, max: 500 }}
                 />
