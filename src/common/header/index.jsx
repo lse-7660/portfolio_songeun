@@ -12,7 +12,7 @@ const navMenu = [
 
 const Header = ({ scrollToSection }) => {
     return (
-        <div className="inner-header flex flex-row justify-between items-center h-[70px] z-10 bg-black bg-opacity-50 mix-blend-exclusion backdrop-blur-xl">
+        <div className="inner-header flex flex-row justify-between items-center h-[70px] z-50 bg-black bg-opacity-50 mix-blend-exclusion backdrop-blur-xl">
             {navMenu.map((menu) => (
                 <p
                     onClick={() =>
