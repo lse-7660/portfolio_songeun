@@ -1,39 +1,56 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, easeInOut } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-const Intro = ({ sectionRefs }) => {
-    const sequences = [
-        ['D', 'A', 'F', 'R', 'T', 'R', 'D'],
-        ['E', 'I', 'Z', 'V', 'A', 'W', 'E'],
-        ['S', 'R', 'A', 'B', 'J', 'A', 'V'],
-        ['I', 'A', 'F', 'R', 'T', 'D', 'E'],
-        ['G', 'I', 'Z', 'V', 'A', 'J', 'L'],
-        ['N', 'R', 'A', 'B', 'D', 'L', 'O'],
-        ['E', 'Y', 'N', 'X', 'E', 'U', 'P'],
-        ['R', 'L', 'C', 'F', 'A', 'X', 'E'],
-    ];
+const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationEndTime }) => {
+    /* 커서 */
+    const [isHovered, setIsHovered] = useState(false);
+    const [cursor, setCursor] = useState({ x: 0, y: 0 });
+    const [animationEnded, setAnimationEnded] = useState(false);
 
-    const lineHeight = 200; // 글자 하나 높이(px)
-    const durationPerStep = 0.2;
-    const animationEndTime = Math.max(
-        ...sequences.map(
-            (column, i) =>
-                1 +
-                i * durationPerStep +
-                column.length * durationPerStep +
-                0.4
-        )
-    );
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAnimationEnded(true);
+        }, 6200);
 
-    const animationFontStyle =
-        'text-[200px] leading-none font-bold text-center font-mono';
+        return () => clearTimeout(timer);
+    }, []);
+
+    const handleMouseMove = (e) => {
+        if (!animationEnded) return;
+        setCursor({ x: e.clientX, y: e.clientY });
+    };
+
+    const animationFontStyle = 'text-[200px] leading-none font-bold text-center font-mono';
 
     return (
         <div
-            ref={(el) =>
-                (sectionRefs.current['intro'] = el)
-            }
+            ref={(el) => (sectionRefs.current['intro'] = el)}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             className="intro bg-g20"
         >
+            <AnimatePresence>
+                {isHovered && animationEnded && (
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, x: cursor.x - 50, y: cursor.y - 50 }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                            x: cursor.x - 50,
+                            y: cursor.y - 50,
+                        }}
+                        exit={{ opacity: 0, scale: 0 }}
+                        transition={{
+                            duration: 0.3,
+                        }}
+                        className="fixed z-20 bg-g900 text-g0 w-[180px] h-[180px] rounded-full centering pointer-events-none"
+                        style={{ top: 0, left: 0 }}
+                    >
+                        Scroll Down
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <div className="inner-intro flex flex-col justify-between h-screen">
                 <div className="intro-title pt-[120px]">
                     <motion.div
@@ -51,17 +68,11 @@ const Intro = ({ sectionRefs }) => {
                                 key={i}
                                 initial={{ y: 0 }}
                                 animate={{
-                                    y:
-                                        -lineHeight *
-                                        (column.length - 1),
+                                    y: -lineHeight * (column.length - 1),
                                 }}
                                 transition={{
-                                    duration:
-                                        durationPerStep *
-                                        column.length,
-                                    delay:
-                                        1 +
-                                        i * durationPerStep,
+                                    duration: durationPerStep * column.length,
+                                    delay: 1 + i * durationPerStep,
                                     ease: 'easeInOut',
                                 }}
                                 className="flex flex-col"
@@ -72,9 +83,7 @@ const Intro = ({ sectionRefs }) => {
                                         style={{
                                             height: `${lineHeight}px`,
                                         }}
-                                        className={
-                                            animationFontStyle
-                                        }
+                                        className={animationFontStyle}
                                     >
                                         {char}
                                     </span>
@@ -111,10 +120,8 @@ const Intro = ({ sectionRefs }) => {
                         }}
                         className="text-center"
                     >
-                        디자인 경력과 개발 효율을 갖춘
-                        프론트엔드 개발자, 이송은입니다.
-                        <br /> 디테일을 고민하고, 경험을
-                        설계합니다.
+                        디자인 경력과 개발 효율을 갖춘 프론트엔드 개발자, 이송은입니다.
+                        <br /> 디테일을 고민하고, 경험을 설계합니다.
                     </motion.p>
                 </div>
                 <motion.div

@@ -1,8 +1,4 @@
-import {
-    BrowserRouter,
-    Route,
-    Routes,
-} from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { DesignGallery, Main } from './pages';
 import WorksPage from './pages/works';
 
@@ -11,14 +7,8 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Main />} />
-                <Route
-                    path="/design"
-                    element={<DesignGallery />}
-                />
-                <Route
-                    path="/works/:name"
-                    element={<WorksPage />}
-                />
+                <Route path="/design" element={<DesignGallery />} />
+                <Route path="/works/:name" element={<WorksPage />} />
             </Routes>
         </BrowserRouter>
     );
