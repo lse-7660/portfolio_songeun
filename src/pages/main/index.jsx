@@ -20,7 +20,7 @@ const Main = () => {
         ['E', 'Y', 'N', 'X', 'E', 'U', 'P'],
         ['R', 'L', 'C', 'F', 'A', 'X', 'E'],
     ];
-    const lineHeight = 200;
+    const lineHeight = 240;
     const durationPerStep = 0.2;
     const animationEndTime = Math.max(
         ...sequences.map((column, i) => 1 + i * durationPerStep + column.length * durationPerStep + 0.4)

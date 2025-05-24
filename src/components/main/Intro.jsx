@@ -20,7 +20,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
         setCursor({ x: e.clientX, y: e.clientY });
     };
 
-    const animationFontStyle = 'text-[200px] leading-none font-bold text-center font-mono';
+    const animationFontStyle = 'text-[240px] leading-none font-bold text-center font-mono';
 
     return (
         <div
@@ -28,7 +28,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="intro bg-g20"
+            className="intro "
         >
             <AnimatePresence>
                 {isHovered && animationEnded && (
@@ -37,17 +37,17 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                         animate={{
                             opacity: 1,
                             scale: 1,
-                            x: cursor.x - 50,
-                            y: cursor.y - 50,
+                            x: cursor.x + 50,
+                            y: cursor.y + 50,
                         }}
                         exit={{ opacity: 0, scale: 0 }}
                         transition={{
                             duration: 0.3,
                         }}
-                        className="fixed z-20 bg-g900 text-g0 w-[180px] h-[180px] rounded-full centering pointer-events-none"
+                        className="fixed z-20 w-[360px] aspect-video centering pointer-events-none bg-[url(/intro/glitch.gif)] grayscale invert"
                         style={{ top: 0, left: 0 }}
                     >
-                        Scroll Down
+                        <p className="text-g0 font-bold text-heading-xs">SCROLL DOWN</p>
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -61,7 +61,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                             delay: animationEndTime + 0.8,
                             ease: 'easeInOut',
                         }}
-                        className="h-[200px] flex flex-row justify-center overflow-hidden mb-5"
+                        className="h-[240px] flex flex-row justify-center overflow-hidden mb-5"
                     >
                         {sequences.map((column, i) => (
                             <motion.div
