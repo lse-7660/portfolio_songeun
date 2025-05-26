@@ -154,7 +154,7 @@ const WhoIAm = ({ sectionRefs }) => {
                         <LineBox scale={0.6} delay={0.08} />
                         <LineBox scale={0.75} delay={0.1} />
                         <LineBox scale={0.95} delay={0.12} />
-                        <img src="/WhoIAm/sample.png" alt="who i am" className="w-full h-full object-cover grayscale" />
+                        {/* <img src="/WhoIAm/sample.png" alt="who i am" className="w-full h-full object-cover grayscale" /> */}
                     </motion.div>
                 </div>
             </div>

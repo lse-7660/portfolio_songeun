@@ -26,6 +26,7 @@ export default {
             },
             fontFamily: {
                 dmserif: ['"DM Serif Display"', 'serif'],
+                kenoky: ['kenoky'],
             },
             fontSize: {
                 'display-xxl': '240px',

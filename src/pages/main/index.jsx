@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Design, Intro, Skills, WhoIAm, Works } from '../../components/main';
 import Header from '../../common/header';
+import Footer from '../../common/footer';
 
 const Main = () => {
     const sectionRefs = useRef({});
@@ -40,6 +41,7 @@ const Main = () => {
             <Skills sectionRefs={sectionRefs} />
             <Works sectionRefs={sectionRefs} />
             <Design sectionRefs={sectionRefs} />
+            <Footer />
         </div>
     );
 };
