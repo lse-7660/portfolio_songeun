@@ -99,9 +99,10 @@ const WhoIAm = ({ sectionRefs }) => {
             className="who-i-am inner-common flex flex-col items-center bg-g900"
         >
             <h3 className="text-g0 mb-6 centering font-bold">Who I Am</h3>
-            <p className="text-[3.2vw]/[120%] mb-5 font-bold text-g0">
-                FROM <LetterSpacing /> DESIGN <LetterSpacing />
-                TO <LetterSpacing /> DEVELOPMENT, <br />I CREATE INTUITIVE AND EFFICIENT <LetterSpacing width={30} />
+            <p className="text-[3.5vw]/[120%] mb-5 font-bold text-g0">
+                FROM <LetterSpacing /> <span className="font-kenoky">DESIGN</span> <LetterSpacing />
+                TO <LetterSpacing /> <span className="font-kenoky">DEVELOPMENT,</span> <br />I CREATE INTUITIVE AND
+                EFFICIENT <LetterSpacing width={30} />
                 USER EXPERIENCES {''}
                 <motion.span
                     initial={{ letterSpacing: '-1.5px' }}

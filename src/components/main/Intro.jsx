@@ -28,7 +28,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
             onMouseMove={handleMouseMove}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="intro "
+            className="intro bg-g40"
         >
             <AnimatePresence>
                 {isHovered && animationEnded && (
@@ -51,8 +51,8 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                     </motion.div>
                 )}
             </AnimatePresence>
-            <div className="inner-intro flex flex-col justify-between h-screen">
-                <div className="intro-title pt-[120px]">
+            <div className="inner-intro flex flex-col gap-[360px]">
+                <div className="intro-title pt-[12vh]">
                     <motion.div
                         initial={{ y: 40 }}
                         animate={{ y: 0 }}
@@ -61,7 +61,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                             delay: animationEndTime + 0.8,
                             ease: 'easeInOut',
                         }}
-                        className="h-[240px] flex flex-row justify-center overflow-hidden mb-5"
+                        className="h-[240px] flex flex-row justify-center overflow-hidden mb-5 pointer-events-none"
                     >
                         {sequences.map((column, i) => (
                             <motion.div

@@ -27,6 +27,7 @@ export default {
             fontFamily: {
                 dmserif: ['"DM Serif Display"', 'serif'],
                 kenoky: ['kenoky'],
+                pretendard: ['pretendard'],
             },
             fontSize: {
                 'display-xxl': '240px',
@@ -38,6 +39,8 @@ export default {
                 'heading-xs': '20px',
 
                 'body-m': '16px',
+
+                'detail-m': '14px',
             },
         },
     },

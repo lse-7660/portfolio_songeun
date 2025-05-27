@@ -43,25 +43,38 @@ const Footer = () => {
                     TOUCH
                 </motion.span>
             </div>
-            {/* <div className="flex flex-col justify-end">
-                <p className="text-g0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p className="text-g0">Distinctio possimus enim assumenda sint at cupiditate, iure,</p>
-                <p className="text-g0">facilis laboriosam neque et perferendis, sed blanditiis? Voluptatem</p>
+            {/* 문구 정해질 시 */}
+            {/* <div className="mt-5 leading-none">
+                <p className="text-g0 text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p className="text-g0 text-right">Distinctio possimus enim assumenda sint at cupiditate, iure,</p>
+                <p className="text-g0 text-right">
+                    facilis laboriosam neque et perferendis, sed blanditiis? Voluptatem
+                </p>
             </div> */}
-            <div className="flex flex-row items-end justify-between mt-[20vh]">
-                <div className="flex flex-row gap-10">
-                    <p className="max-w-[10vw]">
-                        <a href="mailto:thddms355@naver.com" className="email">
-                            <Contact name="EMAIL" />
-                        </a>
-                    </p>
-                    <p cassName="max-w-[10vw]">
-                        <Link to="https://github.com/lse-7660" target="blank" className="github">
-                            <Contact name="GITHUB" />
-                        </Link>
-                    </p>
+            <div className="flex flex-row justify-between items-end mt-[20vh]">
+                <div className="flex flex-col gap-5">
+                    <p className="text-[2vw] font-bold font-kenoky text-g0">LEE SONG EUN</p>
+                    <div className="flex flex-row gap-10">
+                        <p className="max-w-[10vw]">
+                            <a href="mailto:thddms355@naver.com" className="email">
+                                <Contact name="EMAIL" />
+                            </a>
+                        </p>
+                        <p cassName="max-w-[10vw]">
+                            <Link to="https://github.com/lse-7660" target="blank" className="github">
+                                <Contact name="GITHUB" />
+                            </Link>
+                        </p>
+                    </div>
                 </div>
-                <p className="text-[1.5vw] font-bold font-kenoky text-g0">LEE SONG EUN</p>
+                <motion.div
+                    initial={{ rotate: 0 }}
+                    whileInView={{ rotate: -120 }}
+                    transition={{ duration: 0.8, delay: 0.3, ease: 'easeInOut' }}
+                    style={{ transformOrigin: 'center', width: 280, height: 280 }}
+                >
+                    <img src="/logo-white.svg" alt="" className="w-full h-full" />
+                </motion.div>
             </div>
         </div>
     );
