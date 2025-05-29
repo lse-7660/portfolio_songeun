@@ -3,7 +3,7 @@ const worksData = [
         id: 1,
         name: 'Diptyque',
         desc: '향수 브랜드 Diptyque 사이트 개편 프로젝트',
-        imgUrl: '/works/diptyque.png',
+        imgUrl: '/works/diptyque_mockup.png',
         url: 'https://diptyque.vercel.app/',
         git: 'https://github.com/2mightyMt/diptyque',
         team: '5인 팀 프로젝트, 기여도 30%',
@@ -12,8 +12,7 @@ const worksData = [
         conceptImg: '/works/diptyque_conceptimg.png',
         mission:
             '향수 브랜드 Diptyque 사이트 개편, 직관적인 사이트맵 기획, 클래식하고 모던한 브랜드 아이덴티티를 반영한 리디자인',
-        direction:
-            '직관적인 UX/UI, 그레이톤으로 심플하고 정돈된 디자인',
+        direction: '직관적인 UX/UI, 그레이톤으로 심플하고 정돈된 디자인',
         part: [
             {
                 title: '사이트맵 및 플로우차트 기획',
@@ -41,15 +40,14 @@ const worksData = [
         id: 2,
         name: 'Bokjak',
         desc: 'OTT 제작 프로젝트',
-        imgUrl: '/works/bokjak.png',
+        imgUrl: '/works/bokjak_mockup.png',
         url: 'https://bokjak.netlify.app/',
         git: 'https://github.com/lse-7660/bokjak',
         team: '4인 팀 프로젝트, 기여도 60%',
         date: '2025.02',
         tools: 'React, Redux, styled-components, Figma, github',
         conceptImg: '/works/bokjak_conceptimg.png',
-        mission:
-            '종합 OTT 사이트 제작, 사용자에게 친숙하고 직관적인 UX/UI ',
+        mission: '종합 OTT 사이트 제작, 사용자에게 친숙하고 직관적인 UX/UI ',
         direction: '직관적인 UX/UI, ',
         part: [
             {
@@ -78,17 +76,15 @@ const worksData = [
         id: 3,
         name: 'Opensurvey',
         desc: '리서치 플랫폼인 오픈서베이 사이트 개편 프로젝트',
-        imgUrl: '/works/opensurvey.png',
+        imgUrl: '/works/opensurvey_mockup.png',
         url: 'https://lse-7660.github.io/opensurvey/pages/',
         git: 'https://github.com/lse-7660/opensurvey',
         team: '개인 프로젝트, 기여도 100%',
         date: '2024.10',
         tools: 'HTML5, JavaScript, Scss, GSAP, Figma',
         conceptImg: '/works/opensurvey_conceptimg.png',
-        mission:
-            '리서치 사이트 opensurvey 사이트 개편, 직관적인 사이트맵 기획',
-        direction:
-            '심플하면서도 지루하지 않은 디자인, 사용자층을 고려한 차분한 디자인',
+        mission: '리서치 사이트 opensurvey 사이트 개편, 직관적인 사이트맵 기획',
+        direction: '심플하면서도 지루하지 않은 디자인, 사용자층을 고려한 차분한 디자인',
         part: [
             {
                 imgUrl: '/works/opensurvey_section1.png',

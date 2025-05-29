@@ -1,5 +1,3 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import worksData from '../../assets/api/worksData';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -20,7 +18,7 @@ const Works = ({ sectionRefs }) => {
             <AnimatePresence>
                 {hovered && (
                     <motion.div
-                        className="fixed z-50 text-g0 pointer-events-none px-3 py-1 text-heading-xs bg-g900"
+                        className="fixed z-50 text-g0 pointer-events-none px-3 py-1 centering text-heading-xs bg-g900"
                         initial={{ opacity: 0, x: cursor.x + 20, y: cursor.y + 20 }}
                         animate={{ opacity: 1, x: cursor.x + 20, y: cursor.y + 20 }}
                         transition={{
@@ -32,31 +30,41 @@ const Works = ({ sectionRefs }) => {
                             left: 0,
                         }}
                     >
-                        View Details
+                        <span className="mr-2">View Details</span>
+                        <span class="material-symbols-outlined">arrow_outward</span>
                     </motion.div>
                 )}
             </AnimatePresence>
 
-            <Swiper slidesPerView={3.2} spaceBetween={24} className="mySwiper">
-                {worksData.map((item) => (
-                    <SwiperSlide key={item.index}>
-                        <div
-                            className="aspect-[3/4] overflow-hidden relative"
-                            onMouseMove={handleMouseMove}
-                            onMouseEnter={() => setHovered(true)}
-                            onMouseLeave={() => setHovered(false)}
-                        >
-                            <Link to={`/works/${item.name}`}>
+            {worksData.map((item) => (
+                <div key={item.index} className="sticky top-0">
+                    <div
+                        className="w-full h-screen"
+                        onMouseMove={handleMouseMove}
+                        onMouseEnter={() => setHovered(true)}
+                        onMouseLeave={() => setHovered(false)}
+                    >
+                        <Link to={`/works/${item.name}`}>
+                            <div className="relative h-full overflow-hidden">
                                 <img
                                     src={item.imgUrl}
                                     alt={item.name}
-                                    className="h-full w-full object-cover transition-all duration-300 hover:scale-110"
+                                    className="w-full h-full object-cover transition-all duration-300 hover:scale-110"
                                 />
-                            </Link>
-                        </div>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+
+                                <div className="absolute top-0 left-0 w-full h-full p-10 pointer-events-none">
+                                    <p className="text-g0 font-kenoky text-display-s">{item.name}</p>
+                                    <div className="h-[1px] bg-g0 my-5"></div>
+                                    <div className="flex flex-col absolute top-1/2 right-10">
+                                        <span className="text-g0 text-right">{item.date}</span>
+                                        <span className="text-g0 text-right">{item.desc}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+            ))}
         </div>
     );
 };
