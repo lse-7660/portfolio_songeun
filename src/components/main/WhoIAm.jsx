@@ -113,50 +113,53 @@ const WhoIAm = ({ sectionRefs }) => {
                 </motion.span>
             </p>
 
-            <p className="text-body-m w-[860px] mx-auto text-g0 mb-10">
-                디자인부터 개발까지의 전 과정을 아우르며, 사용자 중심의 직관적이고 효율적인 경험을 만들어내는 프론트엔드
-                개발자입니다. UI/UX에 대한 깊은 이해를 바탕으로, 사용자에게 명확하고 일관된 인터페이스를 제공하고자
-                노력하며, 이를 실현하기 위해 깔끔하고 유지 보수가 용이한 코드를 작성하는 것을 중요하게 생각합니다.
-                사용자와 개발자 모두가 만족할 수 있는 결과물을 만들기 위해 세심한 설계와 끊임없는 개선을 추구합니다.
-            </p>
             <div ref={wrapperRef} className="whoiam-graphic-wrap h-[1720px]">
-                <div className="sticky top-[140px] flex flex-row">
-                    <motion.div
-                        style={{ width: leftWidth }}
-                        className="whoiam-graphic-left relative h-[600px] overflow-hidden"
-                    >
-                        {/* <div className="absolute z-20 w-full h-full mix-blend-difference px-4 py-4 flex flex-col justify-between items-start">
-                            {whoIAmImg.map((item) => (
-                                <img key={item.index} src={item.url} className="flex-none"></img>
-                            ))}
-                        </div> */}
-                        <WaveCircle yRange={{ min: 300, max: 500 }} />
-                        <WaveCircle yRange={{ min: 300, max: 500 }} delay={200} />
-                        <WaveCircle yRange={{ min: 300, max: 500 }} delay={400} />
-                        <WaveCircle yRange={{ min: 300, max: 500 }} delay={600} />
-                        <WaveCircle yRange={{ min: 300, max: 500 }} delay={800} />
-                        <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80'} />
-                        <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80 '} delay={200} />
-                        <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80'} delay={400} />
+                <div className="sticky top-[60px]">
+                    <p className="text-body-m w-[860px] mx-auto text-g0 mb-10">
+                        디자인부터 개발까지의 전 과정을 아우르며, 사용자 중심의 직관적이고 효율적인 경험을 만들어내는
+                        프론트엔드 개발자입니다. UI/UX에 대한 깊은 이해를 바탕으로, 사용자에게 명확하고 일관된
+                        인터페이스를 제공하고자 노력하며, 이를 실현하기 위해 깔끔하고 유지 보수가 용이한 코드를 작성하는
+                        것을 중요하게 생각합니다. 사용자와 개발자 모두가 만족할 수 있는 결과물을 만들기 위해 세심한
+                        설계와 끊임없는 개선을 추구합니다.
+                    </p>
+                    <div className="flex flex-row w-[860px]">
+                        <motion.div
+                            style={{ width: leftWidth }}
+                            className="whoiam-graphic-left relative h-[600px] overflow-hidden"
+                        >
+                            {/* <div className="absolute z-20 w-full h-full mix-blend-difference px-4 py-4 flex flex-col justify-between items-start">
+                                {whoIAmImg.map((item) => (
+                                    <img key={item.index} src={item.url} className="flex-none"></img>
+                                ))}
+                            </div> */}
+                            <div className="absolute inset-0 backdrop-blur-3xl z-10" />
+                            <WaveCircle yRange={{ min: 300, max: 500 }} />
+                            <WaveCircle yRange={{ min: 300, max: 500 }} delay={200} />
+                            <WaveCircle yRange={{ min: 300, max: 500 }} delay={400} />
+                            <WaveCircle yRange={{ min: 300, max: 500 }} delay={600} />
+                            <WaveCircle yRange={{ min: 300, max: 500 }} delay={800} />
+                            <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80'} />
+                            <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80 '} delay={200} />
+                            <WaveCircle yRange={{ min: 200, max: 400 }} className={'opacity-80'} delay={400} />
 
-                        <div className="absolute bottom-0 w-full h-1/4 bg-g0" />
-                        <div className="absolute inset-0 backdrop-blur-3xl z-10" />
-                    </motion.div>
-                    <motion.div
-                        style={{ width: rightWidth }}
-                        className="whoiam-graphic-right h-[600px] overflow-hidden relative"
-                    >
-                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-g0 font-bold whitespace-nowrap">
-                            PIXEL TO CODE
-                        </span>
-                        <LineBox scale={0.36} delay={0.02} />
-                        <LineBox scale={0.42} delay={0.04} />
-                        <LineBox scale={0.5} delay={0.06} />
-                        <LineBox scale={0.6} delay={0.08} />
-                        <LineBox scale={0.75} delay={0.1} />
-                        <LineBox scale={0.95} delay={0.12} />
-                        {/* <img src="/WhoIAm/sample.png" alt="who i am" className="w-full h-full object-cover grayscale" /> */}
-                    </motion.div>
+                            <div className="absolute bottom-0 w-full h-1/4 bg-g0" />
+                        </motion.div>
+                        <motion.div
+                            style={{ width: rightWidth }}
+                            className="whoiam-graphic-right h-[600px] overflow-hidden relative"
+                        >
+                            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 text-g0 font-bold whitespace-nowrap">
+                                PIXEL TO CODE
+                            </span>
+                            <LineBox scale={0.36} delay={0.02} />
+                            <LineBox scale={0.42} delay={0.04} />
+                            <LineBox scale={0.5} delay={0.06} />
+                            <LineBox scale={0.6} delay={0.08} />
+                            <LineBox scale={0.75} delay={0.1} />
+                            <LineBox scale={0.95} delay={0.12} />
+                            {/* <img src="/WhoIAm/sample.png" alt="who i am" className="w-full h-full object-cover grayscale" /> */}
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </div>
