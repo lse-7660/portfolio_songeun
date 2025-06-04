@@ -18,7 +18,7 @@ const Works = ({ sectionRefs }) => {
             <AnimatePresence>
                 {hovered && (
                     <motion.div
-                        className="fixed z-50 text-g0 pointer-events-none px-3 py-1 centering text-heading-xs bg-g900"
+                        className="fixed z-50 text-g0 pointer-events-none px-3 py-1 centering text-heading-xs bg-primary"
                         initial={{ opacity: 0, x: cursor.x + 20, y: cursor.y + 20 }}
                         animate={{ opacity: 1, x: cursor.x + 20, y: cursor.y + 20 }}
                         transition={{

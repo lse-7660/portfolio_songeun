@@ -4,6 +4,7 @@ export default {
     theme: {
         extend: {
             colors: {
+                primary: 'var(--primary)',
                 g0: 'var(--g0)',
                 g10: 'var(--g10)',
                 g20: 'var(--g20)',

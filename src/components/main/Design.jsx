@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Design = ({ sectionRefs }) => {
@@ -8,7 +9,7 @@ const Design = ({ sectionRefs }) => {
     return (
         <div
             ref={(el) => (sectionRefs.current['design-gallery'] = el)}
-            className="design-gallery inner-common bg-g900 flex flex-row justify-between"
+            className="design-gallery inner-common !py-[240px] bg-g900 flex flex-row justify-between"
         >
             <div className="flex flex-col justify-between">
                 <div className="flex flex-col items-start gap-5">
@@ -38,7 +39,14 @@ const Design = ({ sectionRefs }) => {
                     ></div>
                 </Link>
             </div>
-            <div onClick={() => navigate('/design')} className="cursor-pointer w-1/2 overflow-hidden">
+            <div onClick={() => navigate('/design')} className="cursor-pointer w-1/2 overflow-hidden relative">
+                <motion.div
+                    initial={{ height: '100%' }}
+                    whileInView={{ height: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ amount: 1 }}
+                    className="absolute z-10 w-full bg-primary"
+                ></motion.div>
                 <img src="/designimage/designgallery_mockup.png" alt="디자인 갤러리 바로가기" className="scale-150" />
             </div>
         </div>
