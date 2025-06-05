@@ -44,6 +44,11 @@ export default {
                 'detail-m': '14px',
             },
         },
+        screens: {
+            mobile: { max: '767px' },
+            tablet: { min: '768px', max: '1279px' },
+            desktop: { min: '1280px' },
+        },
     },
     plugins: [],
 };

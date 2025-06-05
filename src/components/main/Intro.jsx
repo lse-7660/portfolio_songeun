@@ -20,7 +20,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
         setCursor({ x: e.clientX, y: e.clientY });
     };
 
-    const animationFontStyle = 'text-[240px] leading-none font-bold text-center font-mono';
+    const animationFontStyle = 'text-[15vw] leading-none font-bold text-center font-mono';
 
     return (
         <div
@@ -61,14 +61,14 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                             delay: animationEndTime + 0.8,
                             ease: 'easeInOut',
                         }}
-                        className="h-[240px] flex flex-row justify-center overflow-hidden mb-5 pointer-events-none"
+                        className="h-[15vw] flex flex-row justify-center overflow-hidden mb-5 pointer-events-none"
                     >
                         {sequences.map((column, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ y: 0 }}
                                 animate={{
-                                    y: -lineHeight * (column.length - 1),
+                                    y: `-${lineHeight * (column.length - 1)}vw`,
                                 }}
                                 transition={{
                                     duration: durationPerStep * column.length,
@@ -81,7 +81,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                                     <span
                                         key={j}
                                         style={{
-                                            height: `${lineHeight}px`,
+                                            height: `${lineHeight}vw`,
                                         }}
                                         className={animationFontStyle}
                                     >
@@ -92,7 +92,7 @@ const Intro = ({ sectionRefs, sequences, lineHeight, durationPerStep, animationE
                         ))}
                         <motion.span
                             initial={{
-                                y: lineHeight,
+                                y: `${lineHeight}vw`,
                                 width: 0,
                             }}
                             animate={{
