@@ -8,6 +8,10 @@ const Skills = ({ sectionRefs }) => {
 
     const SkillBox = ({ item }) => (
         <div
+            onClick={() => {
+                setIsHover(true);
+                setCurrent(item);
+            }}
             onMouseEnter={() => {
                 setIsHover(true);
                 setCurrent(item);
@@ -17,9 +21,9 @@ const Skills = ({ sectionRefs }) => {
                 setCurrent(null);
             }}
             key={item.index}
-            className="w-20 h-20 bg-g800 centering relative transition-all ease-in-out duration-500 hover:-mt-2 hover:bg-primary"
+            className="desktop:w-20 desktop:h-20 tablet:w-[75px] tablet:h-[75px] w-16 h-16 shrink-0 bg-g800 centering relative transition-all ease-in-out duration-500 hover:-mt-2 hover:bg-primary"
         >
-            <img src={item.imgUrl} alt={item.name} />
+            <img src={item.imgUrl} alt={item.name} className="scale-75 tablet:scale-90 desktop:scale-100" />
         </div>
     );
 
@@ -40,14 +44,14 @@ const Skills = ({ sectionRefs }) => {
                 ></motion.div>
                 <span className="text-[10vw] font-bold text-g0 size-fit leading-none">Skills</span>
             </p>
-            <div className="skills-wrap flex flex-col items-center gap-10 size-fit mx-auto relative">
+            <div className="skills-wrap flex flex-col desktop:items-center items:start gap-10 size-fit mx-auto relative">
                 {isHover && current && (
                     <div className="absolute z-10 -top-20 left-0 flex flex-col text-g0">
                         <span className="font-kenoky text-heading-s">{current.name}</span>
                         <span>{current.desc}</span>
                     </div>
                 )}
-                <div className="skills-language flex flex-row gap-4 ">
+                <div className="skills-language flex flex-wrap gap-4 ">
                     {skillsData
                         .filter((item) => item.type === 'language')
                         .map((item) => (

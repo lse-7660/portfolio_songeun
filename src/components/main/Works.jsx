@@ -53,11 +53,17 @@ const Works = ({ sectionRefs }) => {
                                 />
 
                                 <div className="absolute top-0 left-0 w-full h-full p-10 pointer-events-none">
-                                    <p className="text-g0 font-kenoky text-display-s">{item.name}</p>
+                                    <p className="text-g0 font-kenoky text-display-xs tablet:text-display-xs desktop:text-display-s">
+                                        {item.name}
+                                    </p>
                                     <div className="h-[1px] bg-g0 my-5"></div>
                                     <div className="flex flex-col absolute top-1/2 right-10">
-                                        <span className="text-g0 text-right">{item.date}</span>
-                                        <span className="text-g0 text-right">{item.desc}</span>
+                                        <span className="text-g0 text-right text-body-s tablet:text-body-m desktop:text-body-m">
+                                            {item.date}
+                                        </span>
+                                        <span className="text-g0 text-right text-body-s tablet:text-body-m desktop:text-body-m">
+                                            {item.desc}
+                                        </span>
                                     </div>
                                 </div>
                             </div>

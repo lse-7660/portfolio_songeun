@@ -13,7 +13,7 @@ const Design = ({ sectionRefs }) => {
         >
             <div className="flex flex-col justify-between">
                 <div className="flex flex-col items-start gap-5">
-                    <h3 className="font-bold text-g0 text-center font-kenoky text-display-m leading-none mb-4">
+                    <h3 className="font-bold text-g0 text-center font-kenoky text-display-xs tablet:text-display-s desktop:text-display-m leading-none mb-4">
                         Design Gallery
                     </h3>
                     <p className="text-g0 w-[35vw]">
