@@ -27,7 +27,7 @@
     --g900: #171b1e;
 }
 
-$breakpoint-mobile: 600px;
+$breakpoint-mobile: 768px;
 $breakpoint-tablet: 1280px;
 
 @mixin mobile {
@@ -88,10 +88,10 @@ body {
     width: 100vw;
     padding: 120px 40px;
     @include tablet {
-        padding: 120px 16px;
+        padding: 80px 16px;
     }
     @include mobile {
-        padding: 120px 16px;
+        padding: 60px 2vw;
     }
 }
 .inner-footer {
@@ -117,4 +117,14 @@ body {
 
 a {
     color: var(--g900);
+}
+
+h3 {
+    font-size: 24px;
+    @include tablet {
+        font-size: 16px;
+    }
+    @include mobile {
+        font-size: 16px;
+    }
 }

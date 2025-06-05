@@ -40,6 +40,7 @@ export default {
                 'heading-xs': '20px',
 
                 'body-m': '16px',
+                'body-s': '14px',
 
                 'detail-m': '14px',
             },
