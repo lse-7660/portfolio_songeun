@@ -74,6 +74,37 @@ const worksData = [
     },
     {
         id: 3,
+        name: 'Yeolgong',
+        desc: '스터디 기록 어플리케이션',
+        imgUrl: '/works/yeolgong_mockup.png',
+        url: 'https://fire-study.vercel.app/',
+        git: 'https://github.com/lse-7660/studyapp',
+        team: '개인 프로젝트, 기여도 100%',
+        date: '2024.09',
+        tools: 'React, tailwind, Figma',
+        conceptImg: '/works/yeolgong_conceptimg.png',
+        mission: 'Todo 리스트 관리와 일간 및 주간 공부 시간 기록을 위한 공부 어플리케이션',
+        direction: '직관적 사용을 위한 심플한 디자인과 재미를 더한 UI/UX',
+        part: [
+            {
+                title: '스톱워치',
+                desc: 'Context를 활용하여 스톱워치 기능을 구현하고, 주간 기록 그래프에 해당 요일의 공부 시간을 합산하는 기능을 구현하였습니다. 공부 시간은 local storage에 저장됩니다.',
+                imgUrl: '/works/yeolgong_stopwatch.png',
+            },
+            {
+                title: 'Todo 리스트',
+                desc: '해야 할 일을 작성하여 local storage에 저장하고, 체크박스를 통해 완료 여부를 수정합니다.',
+                imgUrl: '/works/yeolgong_todos.png',
+            },
+            {
+                title: '불꽃 버튼',
+                desc: '랜덤한 x 위치값과 애니메이션 지속 시간을 가진 불꽃 이모지를 생성하는 재미 요소를 추가했습니다.',
+                imgUrl: '/works/yeolgong_fire.GIF',
+            },
+        ],
+    },
+    {
+        id: 4,
         name: 'Opensurvey',
         desc: '리서치 플랫폼인 오픈서베이 사이트 개편 프로젝트',
         imgUrl: '/works/opensurvey_mockup.png',
