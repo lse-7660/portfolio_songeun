@@ -19,6 +19,12 @@ const skillsData = [
     },
     {
         type: 'language',
+        name: 'Typescript',
+        imgUrl: '/skills/Typescript.svg',
+        desc: '정적 타입을 활용해 코드의 안정성과 가독성을 높이고 유지보수를 용이하게 할 수 있습니다',
+    },
+    {
+        type: 'language',
         name: 'React',
         imgUrl: '/skills/React.svg',
         desc: '컴포넌트 기반의 효율적인 사용자 인터페이스를 개발할 수 있습니다',
